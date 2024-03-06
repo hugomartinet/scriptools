@@ -1,1 +1,3 @@
-console.log('Hello via Bun!');
+import Logger from './logger';
+
+export { Logger };
