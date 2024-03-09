@@ -3,6 +3,7 @@ type LogLevel = 'info' | 'success' | 'warn' | 'error';
 interface Log {
   level: LogLevel;
   message: string;
+  details: string[];
 }
 
 class Logger {
@@ -19,14 +20,14 @@ class Logger {
     return Logger.instance;
   }
 
-  public static push(level: LogLevel, message: string) {
+  public static push(level: LogLevel, message: string, details?: string[]) {
     const instance = this.getInstance();
-    instance.logs.push({ level, message });
+    instance.logs.push({ level, message, details: details ?? [] });
   }
 
-  public static pushAndPrint(level: LogLevel, message: string) {
+  public static pushAndPrint(level: LogLevel, message: string, details?: string[]) {
     this.push(level, message);
-    this.printLog({ level, message });
+    this.printLog({ level, message, details: details ?? [] });
   }
 
   private static printLog(log: Log) {
@@ -44,6 +45,10 @@ class Logger {
         console.error(`❌ ${log.message}`);
         break;
     }
+
+    log.details.forEach(detail => {
+      console.log(`   \u{221F} ${detail}`);
+    });
   }
 
   public static print(options?: { grouped: boolean }) {
