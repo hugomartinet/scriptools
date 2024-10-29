@@ -75,3 +75,11 @@ Logger.clear(); // will empty log journal
 Logger.setOptions({ printOnLog: true }); // will print logs immediately
 Logger.setOptions({ grouped: false }); // will print all logs grouped by level
 ```
+
+### Timer
+
+The `withTimer` method wraps a function and logs the execution time.
+
+```typescript
+const result = withTimer(myFunction)('arg1', 2); // will log `[myFunction] 12.34ms`
+```
