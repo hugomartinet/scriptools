@@ -30,6 +30,18 @@ pnpm add scriptools
 
 ## Usage
 
+### Runner
+
+**Run script**
+
+The `runScript` method handles exiting process while running a script. It works with both synchronous and asynchronous methods.
+
+```typescript
+runScript(() => {
+    ...
+})
+```
+
 ### Logger
 
 The `Logger` singleton class handles logging with different levels and printing a log recap.
