@@ -9,6 +9,7 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "noUncheckedIndexedAccess": true,
+    "declaration": true,
     "outDir": "lib"
   },
   "include": ["src"]
