@@ -1,15 +1,30 @@
 {
   "name": "scriptools",
   "version": "0.0.0",
-  "module": "lib/index.js",
+  "repository": "https://github.com/hugomartinet/scriptools",
+  "author": "Hugo Martinet",
+  "keywords": [
+    "node",
+    "script",
+    "scripting",
+    "logger"
+  ],
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@typescript-eslint/eslint-plugin": "^8.12.2",
     "eslint": "^8.8.1",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-unused-imports": "^4.1.4"
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "semantic-release": "^24.2.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
